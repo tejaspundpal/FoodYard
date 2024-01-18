@@ -1,1 +1,1 @@
-🍔 Introducing FoodYard – my cool food ordering site! I built it to practice ReactJS and Tailwind CSS, making it both tasty and a tech-learning adventure.
+🍔 Introducing FoodYard – my cool food ordering site! I built it to practice ReactJS and Tailwind CSS, making it both tasty and a tech-learning adventure. FoodYard brings you real-time data from top restaurants through the power of Swiggy's API.Thanks to Swiggy's API.
