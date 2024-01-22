@@ -22,7 +22,7 @@ const BodyComponent = () => {
         const json = await data.json();
         setAllRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilterdRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        console.log(allRestaurants);
+        // console.log(allRestaurants);
     }
 
     //console.log("render");
