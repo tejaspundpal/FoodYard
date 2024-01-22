@@ -4,7 +4,7 @@ import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
-import useOnline from "../utils/useonline";
+import useOnline from "../utils/useOnline";
 
 const BodyComponent = () => {
     //const searchText = "KFC"; --->no allowed it doesnt change input text hece we need to use state variable 
