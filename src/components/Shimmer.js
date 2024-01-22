@@ -1,6 +1,6 @@
 const Shimmer = () => {
     return (
-        <>
+        <div className="mt-20">
             <input className="m-4 w-60 h-7 bg-gray-200 rounded-md animate-pulse" />
             <button className="px-2 py-0.5 mx-3 bg-gray-200 rounded-md animate-pulse"></button>
             <div className="flex flex-wrap">
@@ -8,13 +8,13 @@ const Shimmer = () => {
                     <div key={index} className="w-60 h-80 rounded-md bg-gray-200 m-5 animate-pulse"></div>))
                 }
             </div>
-        </>
+        </div>
     )
 }
 
 export const ShimmerResMenu = () => {
     return (
-        <div className='flex flex-col bg-gray-100 p-4'>
+        <div className='flex flex-col bg-gray-100 p-4 mt-20'>
             <div className='bg-white p-4 shadow-lg rounded-md mb-4'>
                 <div className='flex items-center mb-4'>
                     <div className='w-32 h-32 bg-gray-300 animate-pulse rounded-full mr-4'></div>

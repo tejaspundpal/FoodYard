@@ -19,9 +19,9 @@ class About extends Component{
 
   render(){
     return (
-      <div className="bg-gray-100 min-h-screen">
+      <div className="bg-gray-100 min-h-screen mt-20">
       <div className="container mx-auto p-8">
-        <h1 className="text-4xl font-bold mb-4 text-gray-800">About FoodYard</h1>
+        <h1 className="text-4xl font-bold mb-4 text-gray-800">About <span className='text-blue-500'>FoodYard</span></h1>
         <p className="text-lg text-gray-700 mb-8">
           Welcome to FoodYard, your go-to destination for delicious and convenient food ordering.
         </p>
@@ -36,7 +36,7 @@ class About extends Component{
             </p>
           </div>
           <div className="flex-1">
-            <h2 className="text-2xl font-bold mb-4 text-gray-800">Why FoodYard?</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-800">Why <span className='text-blue-500'>FoodYard?</span></h2>
             <p className="text-gray-700">
               With a passion for great food and cutting-edge technology, FoodYard stands out in the world of
               online food ordering. We collaborate with top restaurants and use Swiggy's API to bring you a

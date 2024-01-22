@@ -7,21 +7,22 @@ import ReactDOM from "react-dom/client";
 //import {Title} from "./components/Header";
 
 //BEST WAY TO IMPORT COMPONENTS --->
-import HeaderComponent,{Title} from "./components/Header"; 
+import HeaderComponent, { Title } from "./components/Header";
 import BodyComponent from "./components/Body";
 import FooterComponent from "./components/Footer";
-import About from "./components/About";
+// import About from "./components/About";
 import Error from "./components/Error";
 // import Contact from "./components/Contact";
-import RestaurantInfo from "./components/RestaurantInfo"; 
+import RestaurantInfo from "./components/RestaurantInfo";
 import Profile from "./components/Profile";
-import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom"; //this package is used for routing
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; //this package is used for routing
 import Shimmer from "./components/Shimmer";
 import { Provider } from "react-redux";
-import store  from "./utils/store";
+import store from "./utils/store";
 import Cart from "./components/Cart";
 
-const Contact = lazy(()=>import("./components/Contact"));
+const Contact = lazy(() => import("./components/Contact"));
+const About = lazy(() => import("./components/About"));
 //import * as obj from "./components/Header";
 
 
@@ -146,7 +147,7 @@ const AppLayout = () => {
     return (
         <Provider store={store}>
             <HeaderComponent />
-            <Outlet/>
+            <Outlet />
             <FooterComponent />
         </Provider>
     )
@@ -154,43 +155,45 @@ const AppLayout = () => {
 // console.log(10);
 const appRouter = createBrowserRouter([
     {
-        path:"/",
-        element:<AppLayout/>,
-        errorElement:<Error/>,
-        children:[
+        path: "/",
+        element: <AppLayout />,
+        errorElement: <Error />,
+        children: [
             {
-                path:"/",
-                element:<BodyComponent/>,
+                path: "/",
+                element: <BodyComponent />,
             },
             {
-                path:"/about",
-                element:<About/>,
-                children:[
-                    {
-                        path:"profile",
-                        element:<Profile/>
-                    }
-                ]
+                path: "/about",
+                element: <Suspense fallback={<Shimmer />}>
+                    <About />
+                </Suspense>,
             },
             {
-                path:"/contact",
-                element:<Suspense fallback={<Shimmer/>}>
-                            <Contact/>
-                        </Suspense>,
+                path: "/contact",
+                element: <Suspense fallback={<Shimmer />}>
+                    <Contact />
+                </Suspense>,
             },
             {
-                path:"/cart",
-                element:<Suspense fallback={<Shimmer/>}>
-                            <Cart/>
-                        </Suspense>,
+                path: "/cart",
+                element: <Suspense fallback={<Shimmer />}>
+                    <Cart />
+                </Suspense>,
             },
             {
-                path:"/restaurant/:id",
-                element:<RestaurantInfo/>,
+                path: "/profile",
+                element: <Suspense fallback={<Shimmer />}>
+                    <Profile />
+                </Suspense>,
+            },
+            {
+                path: "/restaurant/:id",
+                element: <RestaurantInfo />,
             },
         ],
     },
-    
+
 ])
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter}/>);
+root.render(<RouterProvider router={appRouter} />);
