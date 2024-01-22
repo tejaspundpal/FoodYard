@@ -16,7 +16,7 @@ import Error from "./components/Error";
 import RestaurantInfo from "./components/RestaurantInfo";
 import Profile from "./components/Profile";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; //this package is used for routing
-import Shimmer from "./components/Shimmer";
+import Shimmer, { Loader } from "./components/Shimmer";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import Cart from "./components/Cart";
@@ -165,25 +165,25 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <Suspense fallback={<Shimmer />}>
+                element: <Suspense fallback={<Loader/>}>
                     <About />
                 </Suspense>,
             },
             {
                 path: "/contact",
-                element: <Suspense fallback={<Shimmer />}>
+                element: <Suspense fallback={<Loader/>}>
                     <Contact />
                 </Suspense>,
             },
             {
                 path: "/cart",
-                element: <Suspense fallback={<Shimmer />}>
+                element: <Suspense fallback={<Loader/>}>
                     <Cart />
                 </Suspense>,
             },
             {
                 path: "/profile",
-                element: <Suspense fallback={<Shimmer />}>
+                element: <Suspense fallback={<Loader/>}>
                     <Profile />
                 </Suspense>,
             },
