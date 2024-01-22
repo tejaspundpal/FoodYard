@@ -7,3 +7,8 @@
 🪄 Custom Hooks: Foodify uses Custom Hooks to make the code more reusable and organized, building a scalable and well-organized codebase.
 
 ✨ Shimmer UI: Enjoy smooth loading transitions as you browse through menus and place orders. The shimmer UI adds a touch of class to make using the app enjoyable.
+
+🧭 React Router DOM - Routing and Navigation.
+
+🙅🏻‍♂ Parcel - For bundling , Fast refresh , support JSX , code splitting
+
